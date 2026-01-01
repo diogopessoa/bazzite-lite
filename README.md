@@ -1,9 +1,9 @@
 # bazzite-lite
-[🇧🇷](https://github.com/diogopessoa/bazzite-lite/blob/main/README-BR.md)
+🌐 > [🇧🇷](https://github.com/diogopessoa/bazzite-lite/blob/main/README-BR.md)
     
 **Bazzite-Lite script** makes Bazzite (as well as Bluefin and Aurora) lighter and faster by disabling non-essential background components.
 
-All core Bazzite tools such as ujust, brew, distrobox, podman, and toolbox remain fully functional.
+All core Bazzite tools such as ujust, brew, distrobox, podman, toolbox and flatpak remain fully functional.
 
 ## Objectives
 
@@ -36,7 +36,7 @@ The script disables specific background services to free up resources:
 > **Note:** Systemd sockets remain untouched to ensure zero impact on system stability.
 
 ## How to Use
-
+## Script Installation
 1. Clone the repository or download the script and save it to your ***Downloads folder**:
 
 ```bash
@@ -56,16 +56,32 @@ chmod +x bazzite-lite.sh
 sudo ./bazzite-lite.sh
 ```
 
-*Reboot your system after execution.*
+*✅️ All done! Reboot your system after execution.* 
+
+## Manual Installation
+
+If you prefer to run the commands manually without a script, follow these steps:
+
+```bash
+# 1. Download the optimization script
+curl -fsSL https://raw.githubusercontent.com/diogopessoa/bazzite-lite/main/bazzite-lite.sh -o bazzite-lite.sh
+
+# 2. Make them executable
+chmod +x bazzite-lite.sh bazzite-lite-undo.sh
+
+# 3. Run the optimization
+sudo ./bazzite-lite.sh
+```
+*✅️ All done! Reboot your system after execution.* 
 
 ### Revert the changes
 
-```bash
-sudo bash bazzite-lite-undo.sh
+To revert the changes, run the following commands:
+
+```bash 
+curl -fsSL https://raw.githubusercontent.com/diogopessoa/bazzite-lite/main/bazzite-lite-undo.sh -o bazzite-lite-undo.sh
 ```
-
 ## When NOT to Use
-
 Do **not** apply this profile if you rely on **Host-Level** services:
 
 * **Virtualization:** System-wide **Hypervisors** (Libvirt, Xen, or VirtualBox) installed via `rpm-ostree`.
