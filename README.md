@@ -78,9 +78,15 @@ sudo ./bazzite-lite.sh
 
 To revert the changes, run the following commands:
 
-```bash 
+```bash
+# Download the undo script
 curl -fsSL https://raw.githubusercontent.com/diogopessoa/bazzite-lite/main/bazzite-lite-undo.sh -o bazzite-lite-undo.sh
+
+# Make it executable and run
+chmod +x bazzite-lite-undo.sh
+sudo ./bazzite-lite-undo.sh
 ```
+
 ## When NOT to Use
 Do **not** apply this profile if you rely on **Host-Level** services:
 
