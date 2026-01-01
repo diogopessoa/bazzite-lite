@@ -1,6 +1,6 @@
 # bazzite-lite
-[🇧🇷](https://www.google.com/search?q=./README-BR.md)
-
+[🇧🇷](https://github.com/diogopessoa/bazzite-lite/blob/main/README-BR.md)
+    
 **Bazzite-Lite script** makes Bazzite (as well as Bluefin and Aurora) lighter and faster by disabling non-essential background components.
 
 All core Bazzite tools such as ujust, brew, distrobox, podman, and toolbox remain fully functional.
@@ -41,6 +41,7 @@ The script disables specific background services to free up resources:
 
 ```bash
 cd ~/Downloads
+wget https://github.com/diogopessoa/bazzite-lite/blob/main/bazzite-lite.sh
 ```
 
 2. Make the script executable:
