@@ -1,7 +1,7 @@
 # bazzite-lite
 🌐 > [🇧🇷](https://github.com/diogopessoa/bazzite-lite/blob/main/README-BR.md)
     
-**Bazzite-Lite script** makes Bazzite (as well as Bluefin and Aurora) lighter and faster by disabling non-essential background components.
+**Bazzite-Lite script** makes Bazzite (as well as Bluefin and Aurora) lighter and faster by disabling non-essential background components for desktop use.
 
 All core Bazzite tools such as ujust, brew, distrobox, podman, toolbox and flatpak remain fully functional.
 
@@ -32,8 +32,6 @@ The script disables specific background services to free up resources:
 * `iscsi-onboot.service`
 * `iscsi-starter.service`
 * `dev-hugepages1G.mount`
-
-> **Note:** Systemd sockets remain untouched to ensure zero impact on system stability.
 
 ## How to Use
 ## Script Installation
@@ -67,7 +65,7 @@ If you prefer to run the commands manually without a script, follow these steps:
 curl -fsSL https://raw.githubusercontent.com/diogopessoa/bazzite-lite/main/bazzite-lite.sh -o bazzite-lite.sh
 
 # 2. Make them executable
-chmod +x bazzite-lite.sh bazzite-lite-undo.sh
+chmod +x bazzite-lite.sh
 
 # 3. Run the optimization
 sudo ./bazzite-lite.sh
@@ -103,5 +101,5 @@ This script **will not interfere** with **Containerized Virtualization**. If you
 
 ## Credits
 
-* **[Bazzite](https://bazzite.gg/)** – The next generation of Linux gaming.
-* **[Universal Blue](https://universal-blue.org/)** – The underlying framework for OCI-based Fedora images.
+* **[Bazzite](https://bazzite.gg/)** 
+* **[Universal Blue](https://universal-blue.org/)**
