@@ -1,6 +1,23 @@
-# bazzite-lite
-🌐 > [🇧🇷](https://github.com/diogopessoa/bazzite-lite/blob/main/README-BR.md)
+# bazzite-lite script 
+
+# Table of Contents
+- 🌐 > [🇧🇷](https://github.com/diogopessoa/bazzite-lite/blob/main/README-BR.md)
+- [Table of Contentes](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#table-of-contents)
+  - [About](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#about)
+  - [Objectives](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#objectives)
+  - [What it Modifies](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#what-it-modifies)
+    - [Disabled services include:](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#disabled-services-includes)
+  - [How to Use](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#how-to-uses)
+    - [Script Installation](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#script-installation)
+    - [Manual Installation](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#manual-installation)
+    - [Revert the changes](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#revert-the-changes)
+  - [When NOT to Use](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#when-not-to-use)
+    - [Safes for Flatpaks](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#safes-for-flatpaks)
+  - [License & Author](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#license-author)  
+
     
+## About
+
 **Bazzite-Lite script** makes Bazzite (as well as Bluefin and Aurora) lighter and faster by disabling non-essential background components for desktop use.
 
 All core Bazzite tools such as ujust, brew, distrobox, podman, toolbox and flatpak remain fully functional.
@@ -34,7 +51,7 @@ The script disables specific background services to free up resources:
 * `dev-hugepages1G.mount`
 
 ## How to Use
-## Script Installation
+### Script Installation
 1. Clone the repository or download the script and save it to your ***Downloads folder**:
 
 ```bash
@@ -56,7 +73,7 @@ sudo ./bazzite-lite.sh
 
 *✅️ All done! Reboot your system after execution.* 
 
-## Manual Installation
+### Manual Installation
 
 If you prefer to run the commands manually without a script, follow these steps:
 
