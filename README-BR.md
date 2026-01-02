@@ -57,7 +57,6 @@ sudo ./bazzite-lite.sh
 *✅️ Tudo pronto! Reinicie o sistema após a execução.*
 
 ## Instalação Manual
-### Reverter as alterações
 Se preferir executar os comandos manualmente sem script, siga estas etapas:
 
 ```bash
@@ -65,7 +64,7 @@ Se preferir executar os comandos manualmente sem script, siga estas etapas:
 curl -fsSL https://raw.githubusercontent.com/diogopessoa/bazzite-lite/main/bazzite-lite.sh -o bazzite-lite.sh
 
 # 2. Torne-o executável
-chmod +x bazzite-lite.sh bazzite-lite-undo.sh
+chmod +x bazzite-lite.sh
 
 # 3. Execute como administrador (root)
 sudo ./bazzite-lite.sh
