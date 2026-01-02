@@ -12,7 +12,7 @@
     - [Manual Installation](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#manual-installation)
     - [Revert the changes](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#revert-the-changes)
   - [When NOT to Use](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#when-not-to-use)
-    - [Safes for Flatpaks](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#safes-for-flatpaks)
+    - [Safes for Flatpaks](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#safe-for-flatpaks)
   - [License & Author](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#license-author)  
 
     
