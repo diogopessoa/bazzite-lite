@@ -2,13 +2,13 @@
 # ==========================================
 # Bazzite Lite
 # Autor: Diogo Pessoa
-# Perfil: Desktop / Gaming / Distrobox
+# Perfil: Desktop e Games
 # ==========================================
 
 set -e
 
 echo "=========================================="
-echo " Bazzite Desktop Enxuto"
+echo " Bazzite Lite"
 echo "=========================================="
 echo
 
