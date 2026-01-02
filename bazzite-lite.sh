@@ -2,7 +2,7 @@
 # ==========================================
 # Bazzite Lite
 # Author: Diogo Pessoa
-# Profile: Desktop / Gaming / Distrobox
+# Profile: Desktop and Gaming
 # ==========================================
 
 set -e
