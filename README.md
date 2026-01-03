@@ -7,9 +7,9 @@
   - [Objectives](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#objectives)
   - [What it Modifies](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#what-it-modifies)
     - [Disabled services include:](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#disabled-services-includes)
+  - [Benchmark](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#benchmark)
   - [How to Use](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#how-to-uses)
     - [Script Installation](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#script-installation)
-    - [Manual Installation](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#manual-installation)
     - [Revert the changes](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#revert-the-changes)
   - [When NOT to Use](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#when-not-to-use)
     - [Safes for Flatpaks](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#safe-for-flatpaks)
@@ -50,43 +50,39 @@ The script disables specific background services to free up resources:
 * `iscsi-starter.service`
 * `dev-hugepages1G.mount`
 
+## Benchmark
+
+To see the impact, run this command **before** and **after** applying the bazzite-lite script to compare the results.
+
+```
+# copy e paste into terminal:
+{
+  echo "=== PERFORMANCE REPORT ==="
+  echo "Date: $(date)"
+  echo -e "\n--- BOOT TIME ---"
+  systemd-analyze time
+  echo -e "\n--- ENABLED SERVICES TOTAL ---"
+  systemctl list-unit-files --state=enabled --no-pager | grep "unit files listed" || systemctl list-unit-files --state=enabled --no-pager | wc -l
+  echo -e "\n--- TOP 15 SLOWEST SERVICES ---"
+  systemd-analyze blame | head -n 15
+  echo -e "\n--- MEMORY USAGE ---"
+  free -h
+} > ~/bazzite_benchmark_$(date +%Y%m%d_%H%M%S).txt
+```
+
 ## How to Use
 ### Script Installation
-1. Clone the repository or download the script and save it to your ***Downloads folder**:
 
 ```bash
+# Clone the repository or download the script:
 cd ~/Downloads
-wget https://github.com/diogopessoa/bazzite-lite/blob/main/bazzite-lite.sh
-```
-
-2. Make the script executable:
-   
-```bash
-chmod +x bazzite-lite.sh
-```
-   
-3. Run the script as root:
-
-```bash
-sudo ./bazzite-lite.sh
-```
-
-*✅️ All done! Reboot your system after execution.* 
-
-### Manual Installation
-
-If you prefer to run the commands manually without a script, follow these steps:
-
-```bash
-# 1. Download the optimization script
 curl -fsSL https://raw.githubusercontent.com/diogopessoa/bazzite-lite/main/bazzite-lite.sh -o bazzite-lite.sh
 
-# 2. Make them executable
+# Grant permission and execute.
 chmod +x bazzite-lite.sh
-
-# 3. Run the optimization
 sudo ./bazzite-lite.sh
 ```
+
 *✅️ All done! Reboot your system after execution.* 
 
 ### Revert the changes
@@ -94,10 +90,7 @@ sudo ./bazzite-lite.sh
 To revert the changes, run the following commands:
 
 ```bash
-# Download the undo script
 curl -fsSL https://raw.githubusercontent.com/diogopessoa/bazzite-lite/main/bazzite-lite-undo.sh -o bazzite-lite-undo.sh
-
-# Make it executable and run
 chmod +x bazzite-lite-undo.sh
 sudo ./bazzite-lite-undo.sh
 ```
