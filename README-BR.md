@@ -1,6 +1,22 @@
-# Bazzite Lite
+# bazzite-lite script 
 
-[🇬🇧](https://github.com/diogopessoa/bazzite-lite)
+# Table of Contents
+- 🌐 > [🇬🇧](https://github.com/diogopessoa/bazzite-lite)
+- [Tabela de Conteúdos](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#tabela-de-conteudos)
+  - [Sobre](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#sobre)
+  - [Objetivos](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#objetivos)
+  - [O que ele modifica](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#o-que-ele-modifica)
+    - [Serviços desabilitados](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#serviços-desabilitados)
+  - [Compare](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#compare)
+  - [Como Usar](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#como-usar)
+    - [Script Installation](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#script-installation)
+    - [Reverter mudanças](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#reverter-mudanças)
+  - [Quando NÃO usar](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#quando-nao-usar)
+    - [Flatpaks](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#flatpaks)
+  - [Licença e Autor](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#license-e-autor)  
+
+    
+## Sobre
 
 O script **Bazzite-Lite** torna o Bazzite (assim como o Bluefin e o Aurora) mais leve e rápido, desativando componentes de segundo plano não essenciais para uso em desktop.
 Todas as ferramentas centrais do Bazzite (ujust, brew, distrobox, podman e toolbox) permanecem totalmente funcionais.
@@ -23,7 +39,7 @@ O script desabilita serviços específicos para liberar recursos:
 
 > **Nota:** Os sockets do systemd permanecem intactos para garantir a estabilidade do sistema.
 
-### Serviços desabilitados incluem:
+### Serviços desabilitados
 
 * `virtlxcd.service`
 * `virtqemud.service`
@@ -33,40 +49,35 @@ O script desabilita serviços específicos para liberar recursos:
 * `iscsi-starter.service`
 * `dev-hugepages1G.mount`
 
+## Compare
+
+Para ver o impacto, execute este comando **antes** e **depois** de aplicar o script bazzite-lite para comparar os resultados.
+
+```
+# copie e cole no terminal:
+{
+  echo "=== RELATÓRIO DE DESEMPENHO ==="
+  echo "Date: $(date)"
+  echo -e "\n--- TEMPO DE INICIALIZAÇÃO ---"
+  systemd-analyze time
+  echo -e "\n--- TOTAL DE SERVIÇOS ATIVADOS ---"
+  systemctl list-unit-files --state=enabled --no-pager | grep "unit files listed" || systemctl list-unit-files --state=enabled --no-pager | wc -l
+  echo -e "\n--- TOP 15 SERVIÇOS MAIS LENTOS ---"
+  systemd-analyze blame | head -n 15
+  echo -e "\n--- USO DE MEMÓRIA ---"
+  free -h
+} > ~/bazzite_benchmark_$(date +%Y%m%d_%H%M%S).txt
+```
+
 ## Como Usar
 
-1. Clone o repositório ou baixe o script e salve-o na sua pasta Downloads:
-
 ```bash
+# Entrar na pasta de Downloads e baixar o script
 cd ~/Downloads
-wget https://github.com/diogopessoa/bazzite-lite/blob/main/bazzite-lite.sh
-```
-
-2. Torne o script executável:
-
-```bash
-chmod +x bazzite-lite.sh
-```
-
-3. Execute o script como root:
-
-```bash
-sudo ./bazzite-lite.sh
-```
-
-*✅️ Tudo pronto! Reinicie o sistema após a execução.*
-
-## Instalação Manual
-Se preferir executar os comandos manualmente sem script, siga estas etapas:
-
-```bash
-# 1. Baixe o script
 curl -fsSL https://raw.githubusercontent.com/diogopessoa/bazzite-lite/main/bazzite-lite.sh -o bazzite-lite.sh
 
-# 2. Torne-o executável
+# Dar permissão e executar
 chmod +x bazzite-lite.sh
-
-# 3. Execute como administrador (root)
 sudo ./bazzite-lite.sh
 ```
 
@@ -75,10 +86,7 @@ sudo ./bazzite-lite.sh
 ### Reverter mudanças
 
 ```bash
-# Baixe o script
 curl -fsSL https://raw.githubusercontent.com/diogopessoa/bazzite-lite/main/bazzite-lite-undo.sh -o bazzite-lite-undo.sh
-
-# Torne-o executável e execute
 chmod +x bazzite-lite-undo.sh
 sudo ./bazzite-lite-undo.sh
 ```
@@ -93,7 +101,7 @@ Não aplique este guia se você depende de serviços a **nível de host**:
 
 Este script **não interfere** com **Virtualização via Container**. Se você usa **GNOME Boxes** ou **virt-manager** via **Flatpak**, seu fluxo de trabalho permanecerá funcional, pois eles não dependem desses serviços do sistema.
 
-## Licença & Autor
+## Licença e Autor
 
 **Licença MIT** | Autor [Diogo Pessoa](https://github.com/diogopessoa)
 
