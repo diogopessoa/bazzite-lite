@@ -13,7 +13,7 @@
     - [Reverter mudanças](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#reverter-mudanças)
   - [Quando NÃO usar](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#quando-nao-usar)
     - [Flatpaks](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#flatpaks)
-  - [Licença e Autor](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#license-e-autor)  
+  - [Licença e Autor](https://github.com/diogopessoa/bazzite-lite/?tab=readme-ov-file#licença-e-autor)  
 
     
 ## Sobre
